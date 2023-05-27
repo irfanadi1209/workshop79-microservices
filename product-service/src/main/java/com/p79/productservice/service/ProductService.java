@@ -21,6 +21,7 @@ public class ProductService {
         Product newProduct = Product.builder()
                 .name(productRequest.getName())
                 .description(productRequest.getDescription())
+                .price(productRequest.getPrice())
                 .build();
 
         return productRepository.save(newProduct);
@@ -48,6 +49,7 @@ public class ProductService {
 
             updatedProduct.setName(productRequest.getName());
             updatedProduct.setDescription(productRequest.getDescription());
+            updatedProduct.setPrice(productRequest.getPrice());
 
             return productRepository.save(updatedProduct);
         } else {
